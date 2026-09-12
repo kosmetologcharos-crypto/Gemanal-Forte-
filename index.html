@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d5bd7">
+<meta name="description" content="Gemanal Forte — mahsulot landing sahifasi.">
+<title>Gemanal Forte — Sog‘lom hayotga qayting!</title>
+<style>
+:root{
+  --blue:#1260dc; --blue2:#0b48b5; --sky:#edf6ff; --green:#4f9c55;
+  --ink:#111d31; --muted:#66758a; --white:#fff; --line:#dce7f4;
+  --shadow:0 22px 70px rgba(18,60,110,.13);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff}
+img{max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #e7eef7}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:900;font-size:21px;letter-spacing:.02em;color:#0d4da8}
+.logo span{display:block;font-size:11px;letter-spacing:.2em;color:#e83b22;margin-top:1px}
+.navlinks{display:flex;gap:25px;font-size:14px;color:#52647b}
+.navlinks a:hover{color:var(--blue)}
+.navcta,.btn{display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;border-radius:14px;padding:14px 22px;font-weight:800}
+.navcta,.btn-primary{background:var(--blue);color:white;box-shadow:0 12px 30px rgba(18,96,220,.22)}
+.hero{position:relative;overflow:hidden;background:
+ linear-gradient(135deg,rgba(9,30,55,.80),rgba(13,75,125,.55)),
+ url('assets/section-1.jpg') center/cover;
+ min-height:760px;color:#fff;display:flex;align-items:center}
+.hero:after{content:"";position:absolute;inset:auto -10% -120px;height:240px;background:#fff;border-radius:50% 50% 0 0/100% 100% 0 0}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:90px 0 130px}
+.eyebrow{letter-spacing:.18em;font-size:14px;font-weight:700;opacity:.9}
+h1{font-size:clamp(46px,6vw,78px);line-height:.98;letter-spacing:-.055em;margin:20px 0}
+.hero p{font-size:20px;line-height:1.65;max-width:620px;color:#eef6ff}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn-light{background:#fff;color:var(--ink)}
+.product-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);padding:16px;border-radius:30px;box-shadow:0 30px 90px rgba(0,0,0,.25);backdrop-filter:blur(10px)}
+.product-card img{display:block;width:100%;border-radius:20px}
+.trust{position:relative;z-index:3;margin-top:-65px}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.trust-item{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center;box-shadow:var(--shadow)}
+.trust-item strong{display:block;margin-top:7px;font-size:14px}
+.section{padding:95px 0}
+.section-head{max-width:760px;margin-bottom:38px}
+.section h2{font-size:clamp(34px,4.2vw,55px);line-height:1.02;letter-spacing:-.045em;margin:0 0 14px}
+.lead{font-size:18px;line-height:1.7;color:var(--muted)}
+.symptoms{background:#f7fbff}
+.symptom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.symptom{background:#fff;border:1px solid var(--line);border-radius:22px;padding:27px}
+.num{width:42px;height:42px;border:2px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:var(--blue);font-weight:900;margin-bottom:18px}
+.symptom h3{font-size:20px;margin:0 0 9px}.symptom p{margin:0;color:var(--muted);line-height:1.6}
+.benefits{background:#bcd3ff}
+.benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
+.benefit-list{display:grid;gap:15px}
+.benefit{display:flex;gap:14px;align-items:flex-start;font-size:18px;font-weight:750}
+.check{width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;flex:0 0 auto}
+.benefit-photo{border-radius:24px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.benefit-photo img{display:block;width:100%}
+.nature{background:#fbfaf4}
+.nature-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.nature img{border-radius:28px;box-shadow:var(--shadow)}
+.video{background:#112d50;color:#fff}
+.video .lead{color:#bdcbe0}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.video-card{border-radius:25px;overflow:hidden;background:#183d67;position:relative}
+.video-card img{width:100%;display:block}
+.play{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:#fff;color:#111;display:grid;place-items:center;font-size:27px;box-shadow:0 15px 35px #0005}
+.testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+.quote{background:#fff;color:var(--ink);padding:23px;border-radius:20px}
+.quote p{color:var(--muted);line-height:1.6}.stars{color:#f2ad00;letter-spacing:2px}
+.order{background:linear-gradient(135deg,#f2f8ff,#fff)}
+.order-box{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+.form{background:#fff;border:1px solid var(--line);padding:30px;border-radius:25px;box-shadow:var(--shadow)}
+.field{margin-bottom:17px}.field label{display:block;font-size:14px;font-weight:750;margin-bottom:7px}
+.field input,.field textarea,.field select{width:100%;padding:15px;border:1px solid #cbd8e7;border-radius:12px;font:inherit;outline:none}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #1260dc18}
+.form-note{font-size:12px;color:#758399;line-height:1.5;margin:13px 0 0}
+.faq{background:#f7fafc}.faq-list{max-width:850px}.faq-item{background:#fff;border:1px solid var(--line);border-radius:15px;margin:10px 0;overflow:hidden}.faq-q{padding:19px 22px;font-weight:800;cursor:pointer;display:flex;justify-content:space-between}.faq-a{display:none;padding:0 22px 20px;color:var(--muted);line-height:1.6}.faq-item.open .faq-a{display:block}
+.footer{background:#0e1c30;color:#fff;padding:50px 0}.footer-grid{display:flex;justify-content:space-between;gap:30px}.footer p{color:#aab8ca}
+.mobile-order{display:none}
+@media(max-width:900px){
+ .navlinks{display:none}.hero-inner,.benefit-grid,.nature-grid,.video-grid,.order-box{grid-template-columns:1fr}
+ .hero{min-height:auto}.hero-inner{padding:75px 0 130px}.product-card{max-width:620px}
+ .trust-grid{grid-template-columns:1fr 1fr}.symptom-grid{grid-template-columns:1fr}
+ .testimonials{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+ .nav{height:62px}.navcta{padding:10px 15px;font-size:13px}
+ h1{font-size:47px}.hero p{font-size:17px}.hero-actions .btn{width:100%}
+ .section{padding:65px 0}.trust-grid{grid-template-columns:1fr 1fr}.trust-item{padding:16px 10px}
+ .footer-grid{display:block}.mobile-order{display:block;position:fixed;bottom:14px;left:4%;right:4%;z-index:30;text-align:center;padding:16px;background:var(--blue);color:#fff;border-radius:15px;font-weight:900;box-shadow:0 15px 40px #1260dc55}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+ <div class="container nav">
+  <a class="logo" href="#">GEMANAL<span>FORTE</span></a>
+  <nav class="navlinks">
+   <a href="#symptoms">Belgilar</a><a href="#benefits">Afzalliklar</a><a href="#reviews">Fikrlar</a><a href="#faq">Savol-javob</a>
+  </nav>
+  <a class="navcta" href="#order">Buyurtma berish</a>
+ </div>
+</header>
+
+<main>
+<section class="hero">
+ <div class="container hero-inner">
+  <div>
+   <div class="eyebrow">GEMANAL FORTE</div>
+   <h1>Sog‘lom hayotga qayting!</h1>
+   <p>Gemaroyda qo‘llash uchun mo‘ljallangan malham. Tabiiy tarkibi bilan noqulaylikni kamaytirishga va kundalik hayotga qaytishga yordam beradi.</p>
+   <div class="hero-actions">
+    <a class="btn btn-primary" href="#order">Buyurtma berish →</a>
+    <a class="btn btn-light" href="#reviews">▶ Mijozlar fikrlari</a>
+   </div>
+  </div>
+  <div class="product-card"><img src="assets/section-6.jpg" alt="Gemanal Forte mahsuloti"></div>
+ </div>
+</section>
+
+<section class="trust">
+ <div class="container trust-grid">
+  <div class="trust-item">🌿<strong>Tabiiy komponentlar</strong></div>
+  <div class="trust-item">🛡️<strong>Ishonchli taqdimot</strong></div>
+  <div class="trust-item">✓<strong>Qulay foydalanish</strong></div>
+  <div class="trust-item">❤<strong>Kundalik hayot uchun</strong></div>
+ </div>
+</section>
+
+<section class="section symptoms" id="symptoms">
+ <div class="container">
+  <div class="section-head"><h2>Sizda quyidagi belgilar bormi?</h2><p class="lead">Agar ushbu belgilar sizda mavjud bo‘lsa, muammoni e’tiborsiz qoldirmang.</p></div>
+  <div class="symptom-grid">
+   <article class="symptom"><div class="num">1</div><h3>Anal sohasida og‘riq</h3><p>Sanchish, achishish, qichishish yoki hojat vaqtida og‘riq bezovta qilishi.</p></article>
+   <article class="symptom"><div class="num">2</div><h3>Qon ketishi</h3><p>Hojat vaqtida yoki undan keyin och qizil qon ko‘rinishi mumkin.</p></article>
+   <article class="symptom"><div class="num">3</div><h3>Uzoq muddat bir joyda o‘tirish</h3><p>Ish yoki kundalik faoliyat davomida bir joyda uzoq o‘tirganda noqulaylik kuchayishi mumkin.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section benefits" id="benefits">
+ <div class="container benefit-grid">
+  <div>
+   <div class="section-head"><h2>Gemanal Forte afzalliklari</h2><p class="lead">Mahsulot haqidagi asosiy ma’lumotlarni sodda va tushunarli ko‘rinishda taqdim etish.</p></div>
+   <div class="benefit-list">
+    <div class="benefit"><span class="check">✓</span><span>Yallig‘lanishni kamaytirishga yordam beradi</span></div>
+    <div class="benefit"><span class="check">✓</span><span>Gemaroy simptomlarini yengillashtirishga yordam beradi</span></div>
+    <div class="benefit"><span class="check">✓</span><span>Tabiiy komponentlar asosida tayyorlangan</span></div>
+    <div class="benefit"><span class="check">✓</span><span>Qulay foydalanish uchun mo‘ljallangan</span></div>
+   </div>
+  </div>
+  <div class="benefit-photo"><img src="assets/section-6.jpg" alt="Gemanal Forte qadoqlari"></div>
+ </div>
+</section>
+
+<section class="section nature">
+ <div class="container nature-grid">
+  <div><img src="assets/section-5.jpg" alt="Tabiiy komponentlar"></div>
+  <div><h2>Tabiat kuchi — sog‘lig‘ingiz uchun</h2><p class="lead">Gemanal Forte tabiiy komponentlar asosidagi mahsulot sifatida taqdim etiladi. Landing sahifada mahsulot tarkibi va foydalanish bo‘yicha ma’lumotlar alohida bloklarda berilgan.</p><a class="btn btn-primary" href="#order">Buyurtma berish →</a></div>
+ </div>
+</section>
+
+<section class="section video" id="reviews">
+ <div class="container">
+  <div class="section-head"><h2>Bemorlarning video orqali bergan fikrlari</h2><p class="lead">Mahsulot haqidagi real video kontent va mijozlar fikrlarini bir joyda ko‘rsatish.</p></div>
+  <div class="video-grid">
+   <div class="video-card"><img src="assets/section-3.jpg" alt="Mijoz videosi"><div class="play">▶</div></div>
+   <div class="video-card"><img src="assets/section-2.jpg" alt="Mijozlar fikri"><div class="play">▶</div></div>
+  </div>
+  <div class="testimonials">
+   <div class="quote"><b>Guliston Sobirova</b><p>Mahsulotdan foydalanish bo‘yicha o‘z fikrini bildirgan mijoz.</p><div class="stars">★★★★★</div></div>
+   <div class="quote"><b>Mijozlar fikri</b><p>Video testimoniallar orqali ishonchni kuchaytiruvchi kontent.</p><div class="stars">★★★★★</div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section order" id="order">
+ <div class="container order-box">
+  <div><h2>Buyurtma berish uchun ma’lumotlaringizni qoldiring!</h2><p class="lead">Formani to‘ldiring. Siz bilan bog‘lanish uchun ism va telefon raqamingizni qoldiring.</p></div>
+  <form class="form" id="orderForm">
+   <div class="field"><label for="name">Ism</label><input id="name" name="name" required placeholder="Ismingizni yozing"></div>
+   <div class="field"><label for="phone">Telefon raqamingiz</label><input id="phone" name="phone" required inputmode="tel" placeholder="+998 00 000 00 00"></div>
+   <div class="field"><label for="time">Bog‘lanish uchun qulay vaqt</label><select id="time" name="time"><option>Istalgan vaqt</option><option>09:00–12:00</option><option>12:00–15:00</option><option>15:00–18:00</option><option>18:00–21:00</option></select></div>
+   <button class="btn btn-primary" style="width:100%" type="submit">✓ Buyurtma yuborish</button>
+   <p class="form-note">Ma’lumotlaringiz buyurtmalar jadvaliga yuboriladi. Google Sheets ulanishi sozlangandan keyin forma tayyor ishlaydi.</p>
+  </form>
+ </div>
+</section>
+
+<section class="section faq" id="faq">
+ <div class="container">
+  <div class="section-head"><h2>Savol-javob</h2><p class="lead">Ko‘p beriladigan savollar uchun qisqa javoblar.</p></div>
+  <div class="faq-list">
+   <div class="faq-item"><div class="faq-q">Gemanal Forte nima? <span>＋</span></div><div class="faq-a">Gemanal Forte mahsulot landing sahifasida gemaroy simptomlari bilan bog‘liq noqulayliklar uchun mo‘ljallangan malham sifatida taqdim etilgan.</div></div>
+   <div class="faq-item"><div class="faq-q">Qanday foydalaniladi? <span>＋</span></div><div class="faq-a">Mahsulot qadoqidagi yo‘riqnoma va mutaxassis tavsiyalariga amal qiling.</div></div>
+   <div class="faq-item"><div class="faq-q">Qayerdan buyurtma berish mumkin? <span>＋</span></div><div class="faq-a">Yuqoridagi buyurtma formasini to‘ldirib, aloqa ma’lumotlaringizni qoldirishingiz mumkin.</div></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="footer">
+ <div class="container footer-grid">
+  <div><div class="logo" style="color:#fff">GEMANAL<span>FORTE</span></div><p>Sog‘lom hayotga qayting!</p></div>
+  <div><p>© Gemanal Forte. Barcha huquqlar himoyalangan.</p></div>
+ </div>
+</footer>
+
+<a class="mobile-order" href="#order">Buyurtma berish</a>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>q.parentElement.classList.toggle('open'));
+});
+const SHEETS_WEB_APP_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+document.getElementById('orderForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const form = this;
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const time = document.getElementById('time').value;
+  if(!name || !phone){ alert('Iltimos, ism va telefon raqamingizni kiriting.'); return; }
+
+  const btn = form.querySelector('button[type="submit"]');
+  const oldText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Yuborilmoqda...';
+
+  try {
+    const data = new URLSearchParams({name, phone, time});
+    await fetch(SHEETS_WEB_APP_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},
+      body: data.toString()
+    });
+    alert('Rahmat! Buyurtmangiz qabul qilindi.');
+    form.reset();
+  } catch (err) {
+    alert('Yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko‘ring.');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = oldText;
+  }
+});
+</script>
+</body>
+</html>
